@@ -95,8 +95,8 @@ function MAC_flyable(obj_name, cockpit_path, fm, comm_path) return end
 
 --- Makes a payload rules list
 --- @param stations number[] @stations requiring CLSIDs
---- @param clsids string[] @required CLSIDs
-function make_payload_rules_list(stations, clsids) return end
+--- @param CLSIDs string[] @required CLSIDs
+function make_payload_rules_list(stations, CLSIDs) return end
 
 --- Makes view settings for an aircraft
 --- @param obj_name string @name of the object created by add_aircraft
@@ -540,7 +540,6 @@ function Get_RFGU_GUISettings_Preset(name) return end
 ---@field ammo_type table
 -- sound
 ---@field sound_name string
----@field sounderName string
 
 ---------------------------------------------------------------------------
 --- GT templates

@@ -1,3 +1,4 @@
+---@diagnostic disable: none, none, none
 ---------------------------------------------------------------------------
 --- INDICATOR ENV
 --- used by indicators
@@ -17,43 +18,43 @@ function Add(element) end
 --- Copies an element
 --- @param element Element
 --- @return Element
-function Copy(element) end
+function Copy(element) return end
 
 --- Creates an element
 --- @param type ElementType @element type
 --- @return Element
-function CreateElement(type) end
+function CreateElement(type) return end
 
 --- Returns aspect (height/width)
 --- @return number
-function GetAspect() end
+function GetAspect() return end
 
 --- Returns assigned viewport
 --- @return number @ULX
 --- @return number @ULY
 --- @return number @SZX
 --- @return number @SZY
-function GetAssignedViewport() end
+function GetAssignedViewport() return end
 
 --- Returns half the height
 --- @return number
-function GetHalfHeight() end
+function GetHalfHeight() return end
 
 --- Returns half the height
 --- @return number
-function GetHalfWidth() end
+function GetHalfWidth() return end
 
 --- Returns render target id
 --- @return number
-function GetRenderTarget() end
+function GetRenderTarget() return end
 
 --- Returns scale
 --- @return number
-function GetScale() end
+function GetScale() return end
 
 --- Returns device
 --- @return avDevice
-function GetSelf() end
+function GetSelf() return end
 
 --- Sets custom scale
 --- @param scale number @default 1.0
@@ -65,34 +66,56 @@ function SetScale(scale) end
 
 --- Returns a guid string
 --- @return string
-function create_guid_string() end
+function create_guid_string() return end
 
 ------------------------------------------------------------------------------
 --- Functions available in device and indicator env
 ------------------------------------------------------------------------------
 
 function a_cockpit_highlight(id, name, size, plugin) end
+
 function a_cockpit_highlight_indication(id, indicator, name, size, plugin) end
+
 function a_cockpit_highlight_position(id, x, y, z, dimX, dimY, dimZ) end
+
 function a_cockpit_lock_player_seat(number) end
+
 function a_cockpit_param_save_as(source, destination) end
+
 function a_cockpit_perform_clickable_action(device, command, value, plugin) end
+
 function a_cockpit_pop_actor() end
+
 function a_cockpit_push_actor(number) end
+
 function a_cockpit_remove_highlight(id) end
+
 function a_cockpit_unlock_player_seat() end
+
 function a_start_listen_command(command, flag, count, min, max, device) end
+
 function a_start_listen_event(event, flag) end
+
 function c_argument_in_range(argument, min, max, plugin) end
+
 function c_cockpit_highlight_visible(id) end
+
 function c_cockpit_param_equal_to(param, value) end
+
 function c_cockpit_param_in_range(param, min, max) end
+
 function c_cockpit_param_is_equal_to_another(param1, param2) end
+
 function c_indication_txt_equal_to(id, name, value) end
+
 function c_start_wait_for_user(flagCont, flagBack) end
+
 function c_stop_wait_for_user() end
+
 function copy_to_mission_and_dofile() end
+
 function copy_to_mission_and_get_buffer() end
+
 function dbg_print() end
 
 --- Triggers command with value. Similar to avDevice:performClickableAction() but doesn't move the switch
@@ -110,27 +133,27 @@ function do_mission_file(file) end
 --- Finds viewport by name
 --- @param name string
 --- @return table
-function find_viewport(name) end
+function find_viewport(name) return end
 
 --- Converts lat/lon to local coordinates
 --- @param lat number
 --- @param lon number
 --- @return vec3
-function geo_to_lo_coords(lat, lon) end
+function geo_to_lo_coords(lat, lon) return end
 
 --- Returns time of day in seconds (including fractional seconds)
 --- @return number
-function get_absolute_model_time() end
+function get_absolute_model_time() return end
 
 --- Returns aircraft draw argument value
 --- @param arg number
 --- @return number
-function get_aircraft_draw_argument_value(arg) end
+function get_aircraft_draw_argument_value(arg) return end
 
 --- Returns aircraft mission data
 --- @param key string @e.g. "Radio"
 --- @return table
-function get_aircraft_mission_data(key) end
+function get_aircraft_mission_data(key) return end
 
 --- Returns aircraft property
 --- @param name string
@@ -144,7 +167,7 @@ function get_aircraft_property_or_nil(name) end
 
 --- Returns aircraft type
 --- @return string
-function get_aircraft_type() end
+function get_aircraft_type() return end
 
 --- Returns sensor base data
 --- @return BaseData
@@ -153,32 +176,32 @@ function get_base_data() return end
 --- Returns clickable element reference
 --- @param point_name string @see point name in clickabledata.lua, index of elements
 --- @return table @functions: set_hint, update, hide
-function get_clickable_element_reference(point_name) end
+function get_clickable_element_reference(point_name) return end
 
 --- Returns cockpit draw argument value
 --- @param arg number
 --- @return number
-function get_cockpit_draw_argument_value(arg) end
+function get_cockpit_draw_argument_value(arg) return end
 
 --- Returns path for plugin
 --- @param name string @plugin name
 --- @return string
-function get_dcs_plugin_path(name) end
+function get_dcs_plugin_path(name) return end
 
 --- ??
 function get_input_devices() end
 
 --- Returns mission route
 --- @return table @route (table of wps)
-function get_mission_route() end
+function get_mission_route() return end
 
 --- Returns time in seconds since mission launched
 --- @return number
-function get_model_time() end
+function get_model_time() return end
 
 --- Returns multi-monitor preset name
 --- @return string
-function get_multimonitor_preset_name() end
+function get_multimonitor_preset_name() return end
 
 --- ??
 function get_non_sim_random_evenly() end
@@ -214,46 +237,46 @@ function get_random_orderly() end
 --- Returns terrain related data
 --- @param file string @"beacons", "beaconsFile", "Airdromes", "name", "TAD_vfs_archives", "TAD_chart_map_set_file", "edterrainVersion", "KNEEBOARD"
 --- @return table @terrain related data (display_name, radio={})
-function get_terrain_related_data(file) end
+function get_terrain_related_data(file) return end
 
 --- Returns UI main view
 --- @return number, number, number, number, number @start_x, start_y, main_w, main_h, gui_scale
-function get_UIMainView() end
+function get_UIMainView() return end
 
 --- Returns all viewports
 --- @return table
-function get_Viewports() end
+function get_Viewports() return end
 
 --- Returns cockpit parameters
 --- @return table
-function list_cockpit_params() end
+function list_cockpit_params() return end
 
 --- Returns list indication
 --- @param indicator_id number
 --- @return string @indication text
-function list_indication(indicator_id) end
+function list_indication(indicator_id) return end
 
 --- Converts local coordinates to lat/lon
 --- @param pos vec3
 --- @return number, number @lat, lon
-function lo_to_geo_coords(pos) end
+function lo_to_geo_coords(pos) return end
 
 --- Loads mission (?) file
 --- @param file string @filepath
 --- @return function @chunk
-function load_mission_file(file) end
+function load_mission_file(file) return end
 
 --- Makes a font
 --- @param font_data table @{used_DXUnicodeFontData = "font_dejavu_lgc_sans_22"}
 --- @param rgba table @{0, 255, 0, 255}
 --- @return table
-function MakeFont(font_data, rgba) end
+function MakeFont(font_data, rgba) return end
 
 --- Makes a material
 --- @param texture_path string @material name, path to texture (dds, tga)
 --- @param rgba table @{0, 255, 0, 255}
 --- @return table
-function MakeMaterial(texture_path, rgba) end
+function MakeMaterial(texture_path, rgba) return end
 
 --- Mounts a model path.
 --- @param path string The path.
@@ -298,11 +321,11 @@ function switch_labels_off() end
 
 --- Checks if track file is reading
 --- @return boolean
-function track_is_reading() end
+function track_is_reading() return end
 
 --- Checks if track file is writing
 --- @return boolean
-function track_is_writing() end
+function track_is_writing() return end
 
 --- ??
 function UTF8_strlen() end
@@ -318,7 +341,7 @@ function UTF8_substring() end
 --- @field name string @element name
 --- @field parent_element string @parent element name
 --- @field element_params string[] @list of shared element parameters
---- @field material string @material name, see MakeMaterial()
+--- @field material string|table @material name, see MakeMaterial()
 --- @field init_pos vec2|vec3 @initial position
 --- @field init_rot vec2 @initial rotation (degrees)
 --- @field h_clip_relation h_clip_relations @hardware clipping relations (pixel test/modify)
@@ -331,7 +354,7 @@ function UTF8_substring() end
 --- @field change_opacity boolean @???
 --- @field isdraw boolean @if false, element is not drawn
 --- @field primitivetype PrimitiveType @"triangles", "lines", (...others???)
---- @field vertices vec3[] @list of vertices
+--- @field vertices number[][] @list of vertices, each vertex is a table of numbers (e.g. {x, y} or {x, y, z})
 --- @field indices number[] @list of vertex indices (3 per triangle, 1 per point on line)
 --- @field width number @line width
 --- @field UseBackground boolean @if true, use background material
@@ -348,55 +371,55 @@ function UTF8_substring() end
 --- @field state_tex_coords table @states of texture coordinates (what if tex_coords also used ???)
 
 --- @alias ElementType string
----| '"ceBoundingMeshBox"'
----| '"ceBoundingTexBox"'
----| '"ceCircle"'
----| '"ceHWLine"'
----| '"ceHWSector"'
----| '"ceHint"'
----| '"ceMeshPoly"'
----| '"ceSCircle"'
----| '"ceSMultiLine"'
----| '"ceSVarLenLine"'
----| '"ceSimple"'
----| '"ceSimpleLineObject"'
----| '"ceStringPoly"'
----| '"ceTMultiLine"'
----| '"ceTexPoly"'
+--- | '"ceBoundingMeshBox"'
+--- | '"ceBoundingTexBox"'
+--- | '"ceCircle"'
+--- | '"ceHWLine"'
+--- | '"ceHWSector"'
+--- | '"ceHint"'
+--- | '"ceMeshPoly"'
+--- | '"ceSCircle"'
+--- | '"ceSMultiLine"'
+--- | '"ceSVarLenLine"'
+--- | '"ceSimple"'
+--- | '"ceSimpleLineObject"'
+--- | '"ceStringPoly"'
+--- | '"ceTMultiLine"'
+--- | '"ceTexPoly"'
 
 --- @alias ElementAlignment string
----| '"LeftTop"'
----| '"CenterTop"'
----| '"RightTop"'
----| '"LeftCenter"'
----| '"CenterCenter"'
----| '"RightCenter"'
----| '"LeftBottom"'
----| '"CenterBottom"'
----| '"RightBottom"'
+--- | '"LeftTop"'
+--- | '"CenterTop"'
+--- | '"RightTop"'
+--- | '"LeftCenter"'
+--- | '"CenterCenter"'
+--- | '"RightCenter"'
+--- | '"LeftBottom"'
+--- | '"CenterBottom"'
+--- | '"RightBottom"'
 
 --- @alias PrimitiveType string
----| '"triangles"'
----| '"lines"'
+--- | '"triangles"'
+--- | '"lines"'
 
 --- @alias ElementControllerType string
----| '"change_color_when_parameter_equal_to_number"'
----| '"text_using_parameter"'
----| '"move_left_right_using_parameter"'
----| '"move_up_down_using_parameter"'
----| '"opacity_using_parameter"'
----| '"rotate_using_parameter"'
----| '"compare_parameters"'
----| '"parameter_in_range"'
----| '"parameter_compare_with_number"'
----| '"line_object_set_point_using_parameters"'
----| '"screenspace_position"'
----| '"set_origin_to_cockpit_shape"'
----| '"show"'
----| '"change_texture_state_using_parameter"'
----| '"change_color_using_parameter"'
----| '"fov_control"'
----| '"increase_render_target_counter"'
+--- | '"change_color_when_parameter_equal_to_number"'
+--- | '"text_using_parameter"'
+--- | '"move_left_right_using_parameter"'
+--- | '"move_up_down_using_parameter"'
+--- | '"opacity_using_parameter"'
+--- | '"rotate_using_parameter"'
+--- | '"compare_parameters"'
+--- | '"parameter_in_range"'
+--- | '"parameter_compare_with_number"'
+--- | '"line_object_set_point_using_parameters"'
+--- | '"screenspace_position"'
+--- | '"set_origin_to_cockpit_shape"'
+--- | '"show"'
+--- | '"change_texture_state_using_parameter"'
+--- | '"change_color_using_parameter"'
+--- | '"fov_control"'
+--- | '"increase_render_target_counter"'
 --[[
 {"change_color_when_parameter_equal_to_number", param_nr, number, red, green, blue}
 {"text_using_parameter", param_nr, format_nr}
@@ -410,9 +433,9 @@ function UTF8_substring() end
 {"line_object_set_point_using_parameters", point_nr, param_x, param_y, gain_x, gain_y}
 {"screenspace_position", a, b, c} -- ??? e.g.: {"screenspace_position", 2, -(aspect - 2 * size), 0}, a might be axis
 {"set_origin_to_cockpit_shape"} -- sets origin to cockpit shape
-{"show"} -- unsure, mostly seen in screenspace elements (root element) 
+{"show"} -- unsure, mostly seen in screenspace elements (root element)
 {"change_texture_state_using_parameter", param_nr} -- change texture state using state_tex_coords[param_value]
-{"change_color_using_parameter", ???} -- 
+{"change_color_using_parameter", ???} --
 {"fov_control", ???}
 {"increase_render_target_counter", ???}
 --]]
@@ -470,8 +493,8 @@ page_subsets = {
 }
 pages = {
     [0] = {},
-    [1] = {0},
-    [2] = {0, 1}
+    [1] = { 0 },
+    [2] = { 0, 1 }
 }
 init_pageID = 0
 use_parser = false

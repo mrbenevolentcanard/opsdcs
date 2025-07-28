@@ -21,7 +21,7 @@ power_bus_handle = ""
 --- not in mainpanel
 --- @param sdef string @refers to sdef file, and sdef file content refers to sound file, see DCSWorld/Sounds/sdef/_example.sdef
 --- @return table
-function create_sound(sdef) end
+function create_sound(sdef) return end
 
 --- Creates a sound host
 --- not in mainpanel
@@ -31,16 +31,16 @@ function create_sound(sdef) end
 --- @param y number
 --- @param z number
 --- @return table
-function create_sound_host(name, type, x, y, z) end
+function create_sound_host(name, type, x, y, z) return end
 
 --- Returns a device
 --- @param id number
 --- @return avDevice
-function GetDevice(id) end
+function GetDevice(id) return end
 
 --- Returns the current device
 --- @return avDevice
-function GetSelf() end
+function GetSelf() return end
 
 --- Calls update() function within device with given time step
 --- not in mainpanel
@@ -56,7 +56,7 @@ function SetGlobalCommand() end
 --- Creates a gauge
 --- @param type string|nil @nil, "parameter", "cycled" or "external_arg" (see Gauge for usage)
 --- @return Gauge
-function CreateGauge(type) end
+function CreateGauge(type) return end
 
 --- @class Gauge
 --- @field arg_number number @argument number to be animated
@@ -70,7 +70,7 @@ function CreateGauge(type) end
 
 --- Returns controllers
 --- @return MainPanelControls
-function LoRegisterPanelControls() end
+function LoRegisterPanelControls() return end
 
 --- @class MainPanelControls
 --- @field Panel_Rot_X userdata
@@ -177,27 +177,27 @@ function do_mission_file(file) end
 --- Finds viewport by name
 --- @param name string
 --- @return table
-function find_viewport(name) end
+function find_viewport(name) return end
 
 --- Converts lat/lon to local coordinates
 --- @param lat number
 --- @param lon number
 --- @return vec3
-function geo_to_lo_coords(lat, lon) end
+function geo_to_lo_coords(lat, lon) return end
 
 --- Returns time of day in seconds (including fractional seconds)
 --- @return number
-function get_absolute_model_time() end
+function get_absolute_model_time() return end
 
 --- Returns aircraft draw argument value
 --- @param arg number
 --- @return number
-function get_aircraft_draw_argument_value(arg) end
+function get_aircraft_draw_argument_value(arg) return end
 
 --- Returns aircraft mission data
 --- @param key string @e.g. "Radio"
 --- @return table
-function get_aircraft_mission_data(key) end
+function get_aircraft_mission_data(key) return end
 
 --- Returns aircraft property
 --- @param name string
@@ -211,7 +211,7 @@ function get_aircraft_property_or_nil(name) end
 
 --- Returns aircraft type
 --- @return string
-function get_aircraft_type() end
+function get_aircraft_type() return end
 
 --- Returns sensor base data
 --- @return BaseData
@@ -220,32 +220,32 @@ function get_base_data() return end
 --- Returns clickable element reference
 --- @param point_name string @see point name in clickabledata.lua, index of elements
 --- @return table @functions: set_hint, update, hide
-function get_clickable_element_reference(point_name) end
+function get_clickable_element_reference(point_name) return end
 
 --- Returns cockpit draw argument value
 --- @param arg number
 --- @return number
-function get_cockpit_draw_argument_value(arg) end
+function get_cockpit_draw_argument_value(arg) return end
 
 --- Returns path for plugin
 --- @param name string @plugin name
 --- @return string
-function get_dcs_plugin_path(name) end
+function get_dcs_plugin_path(name) return end
 
 --- ??
 function get_input_devices() end
 
 --- Returns mission route
 --- @return table @route (table of wps)
-function get_mission_route() end
+function get_mission_route() return end
 
 --- Returns time in seconds since mission launched
 --- @return number
-function get_model_time() end
+function get_model_time() return end
 
 --- Returns multi-monitor preset name
 --- @return string
-function get_multimonitor_preset_name() end
+function get_multimonitor_preset_name() return end
 
 --- ??
 function get_non_sim_random_evenly() end
@@ -259,7 +259,7 @@ function get_option_value(option, env) end
 --- This is used to set a param handle, best described as a global variable. It is useful for setting animations in mainpanel.lua, getting information into indicators, and getting information between an EFM and lua if you have an EFM.
 --- @param param string The param handle name
 --- @return ParamHandle
-function get_param_handle(param) end
+function get_param_handle(param) return end
 
 --- ??
 function get_player_crew_index() end
@@ -282,46 +282,46 @@ function get_random_orderly() end
 --- Returns terrain related data
 --- @param file string @"beacons", "beaconsFile", "Airdromes", "name", "TAD_vfs_archives", "TAD_chart_map_set_file", "edterrainVersion", "KNEEBOARD"
 --- @return table @terrain related data (display_name, radio={})
-function get_terrain_related_data(file) end
+function get_terrain_related_data(file) return end
 
 --- Returns UI main view
 --- @return number, number, number, number, number @start_x, start_y, main_w, main_h, gui_scale
-function get_UIMainView() end
+function get_UIMainView() return end
 
 --- Returns all viewports
 --- @return table
-function get_Viewports() end
+function get_Viewports() return end
 
 --- Returns cockpit parameters
 --- @return table
-function list_cockpit_params() end
+function list_cockpit_params() return end
 
 --- Returns list indication
 --- @param indicator_id number
 --- @return string @indication text
-function list_indication(indicator_id) end
+function list_indication(indicator_id) return end
 
 --- Converts local coordinates to lat/lon
 --- @param pos vec3
 --- @return number, number @lat, lon
-function lo_to_geo_coords(pos) end
+function lo_to_geo_coords(pos) return end
 
 --- Loads mission file
 --- @param file string @filepath
 --- @return function @chunk
-function load_mission_file(file) end
+function load_mission_file(file) return end
 
 --- Makes a font
 --- @param font_data table @{used_DXUnicodeFontData = "font_dejavu_lgc_sans_22"}
 --- @param rgba table @{0, 255, 0, 255}
 --- @return table
-function MakeFont(font_data, rgba) end
+function MakeFont(font_data, rgba) return end
 
 --- Makes a material
 --- @param texture_path string @material name, path to texture (dds, tga)
 --- @param rgba table @{0, 255, 0, 255}
 --- @return table
-function MakeMaterial(texture_path, rgba) end
+function MakeMaterial(texture_path, rgba) return end
 
 --- Mounts a model path.
 --- @param path string The path.
@@ -366,11 +366,11 @@ function switch_labels_off() end
 
 --- Checks if track file is reading
 --- @return boolean
-function track_is_reading() end
+function track_is_reading() return end
 
 --- Checks if track file is writing
 --- @return boolean
-function track_is_writing() end
+function track_is_writing() return end
 
 --- ??
 function UTF8_strlen() end
@@ -506,7 +506,7 @@ function UTF8_substring() end
 --- @field getEngineRightFuelConsumption fun()
 --- @field getEngineRightRPM fun(): number Gets the current right engine RPM in percent.
 --- @field getEngineRightTemperatureBeforeTurbine fun(): number Gets the current right engine temperature before turbine.
---- @field getFlapsPos fun()
+--- @field getFlapsPos number
 --- @field getFlapsRetracted fun()
 --- @field getHeading fun(): number Gets the current heading in radians. (?)
 --- @field getHelicopterCollective fun()
@@ -520,7 +520,7 @@ function UTF8_substring() end
 --- @field getMachNumber fun(): number Gets the current mach.
 --- @field getMagneticHeading fun(): number Gets the current magnetic heading in radians. (?)
 --- @field getNoseLandingGearDown fun()
---- @field getNoseLandingGearUp fun()
+--- @field getNoseLandingGearUp integer
 --- @field getPitch fun(): number Gets the current pitch in radians.
 --- @field getRadarAltitude fun(): number Gets the current radar altitude in meters.
 --- @field getRateOfPitch fun()
@@ -534,17 +534,17 @@ function UTF8_substring() end
 --- @field getSelfCoordinates fun()
 --- @field getSelfVelocity fun()
 --- @field getSpeedBrakePos fun()
---- @field getStickPitchPosition fun()
---- @field getStickRollPosition fun()
---- @field getThrottleLeftPosition fun()
---- @field getThrottleRightPosition fun()
---- @field getTotalFuelWeight fun()
---- @field getTrueAirSpeed fun()
---- @field getVerticalAcceleration fun()
---- @field getVerticalVelocity fun()
---- @field getWOW_LeftMainLandingGear fun()
---- @field getWOW_NoseLandingGear fun()
---- @field getWOW_RightMainLandingGear fun()
+--- @field getStickPitchPosition number
+--- @field getStickRollPosition number
+--- @field getThrottleLeftPosition number
+--- @field getThrottleRightPosition number
+--- @field getTotalFuelWeight number
+--- @field getTrueAirSpeed number
+--- @field getVerticalAcceleration number
+--- @field getVerticalVelocity number
+--- @field getWOW_LeftMainLandingGear integer
+--- @field getWOW_NoseLandingGear integer
+--- @field getWOW_RightMainLandingGear integer
 
 ------------------------------------------------------------------------------
 --- Callbacks
